@@ -1,0 +1,156 @@
+/* =====================================================
+                 GOOGLE FONTS
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* =====================================================
+                    ROOT VARIABLES
+===================================================== */
+
+:root{
+
+    /* Colors */
+
+    --primary:#2563EB;
+
+    --primary-dark:#1D4ED8;
+
+    --secondary:#3B82F6;
+
+    --accent:#06B6D4;
+
+    --success:#22C55E;
+
+    --warning:#F59E0B;
+
+    --danger:#EF4444;
+
+    --white:#FFFFFF;
+
+    --black:#000000;
+
+    --text:#0F172A;
+
+    --text-light:#475569;
+
+    --border:#E2E8F0;
+
+    --background:#FFFFFF;
+
+    --section:#F8FAFC;
+
+    --card:#FFFFFF;
+
+    --shadow:0 10px 35px rgba(0,0,0,.08);
+
+    --shadow-hover:0 20px 45px rgba(0,0,0,.15);
+
+    --radius:18px;
+
+    --radius-sm:10px;
+
+    --radius-lg:30px;
+
+    --transition:.35s ease;
+
+    --navbar-height:80px;
+
+}
+
+/* Dark Theme */
+
+body.dark{
+
+    --background:#0F172A;
+
+    --section:#1E293B;
+
+    --card:#1E293B;
+
+    --text:#FFFFFF;
+
+    --text-light:#CBD5E1;
+
+    --border:#334155;
+
+}
+
+/* =====================================================
+                    TYPOGRAPHY
+===================================================== */
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+h1,h2,h3,h4,h5,h6{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+code{
+
+    font-family:'JetBrains Mono',monospace;
+
+}
+/* =====================================================
+                    SPACING
+===================================================== */
+
+.section-padding{
+
+    padding:120px 0;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+}
+
+/* =====================================================
+                    BUTTONS
+===================================================== */
+
+.btn{
+
+    border-radius:50px;
+
+    padding:14px 32px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
+}
+
+.btn-outline-primary{
+
+    border:2px solid var(--primary);
+
+}

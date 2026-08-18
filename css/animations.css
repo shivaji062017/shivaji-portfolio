@@ -1,0 +1,428 @@
+/* =========================================================
+                    GLOBAL TRANSITIONS
+========================================================= */
+
+*{
+
+    transition:
+        background-color .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease;
+
+}
+
+/* =========================================================
+                    FADE IN
+========================================================= */
+
+.fade-in{
+
+    opacity:0;
+
+    animation:fadeIn 1s forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* =========================================================
+                FADE UP
+========================================================= */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .8s forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================================================
+                FADE LEFT
+========================================================= */
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-40px);
+
+    animation:fadeLeft .8s forwards;
+
+}
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* =========================================================
+                FADE RIGHT
+========================================================= */
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(40px);
+
+    animation:fadeRight .8s forwards;
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* =========================================================
+                FLOATING
+========================================================= */
+
+.float{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================================================
+                ROTATE
+========================================================= */
+
+.rotate{
+
+    animation:rotate360 20s linear infinite;
+
+}
+
+@keyframes rotate360{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================================================
+                BUTTON RIPPLE
+========================================================= */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    left:50%;
+
+    top:50%;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:translate(-50%,-50%);
+
+    transition:.5s;
+
+}
+
+.btn:hover::after{
+
+    width:250px;
+
+    height:250px;
+
+}
+
+/* =========================================================
+                ICON ROTATE
+========================================================= */
+
+.skill-card:hover i,
+
+.contact-card:hover i,
+
+.footer-social a:hover i{
+
+    transform:rotate(360deg);
+
+}
+
+/* =========================================================
+                IMAGE ZOOM
+========================================================= */
+
+.project-card img,
+
+.certificate-card img{
+
+    transition:.4s;
+
+}
+
+.project-card:hover img,
+
+.certificate-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* =========================================================
+                HERO IMAGE GLOW
+========================================================= */
+
+.hero-image{
+
+    animation:heroGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes heroGlow{
+
+    0%{
+
+        box-shadow:0 0 20px rgba(37,99,235,.15);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 45px rgba(37,99,235,.35);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 20px rgba(37,99,235,.15);
+
+    }
+
+}
+
+/* =========================================================
+                CARD HOVER
+========================================================= */
+
+.skill-card,
+
+.project-card,
+
+.certificate-card,
+
+.stats-card,
+
+.info-box{
+
+    transition:.35s;
+
+}
+
+.skill-card:hover,
+
+.project-card:hover,
+
+.certificate-card:hover,
+
+.stats-card:hover,
+
+.info-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* =========================================================
+                BOUNCE
+========================================================= */
+
+.bounce{
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* =========================================================
+                SPIN
+========================================================= */
+
+.spin{
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================================================
+                PULSE
+========================================================= */
+
+.pulse{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
