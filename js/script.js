@@ -219,3 +219,94 @@ console.log(
 "color:#2563EB;font-size:18px;font-weight:bold;"
 
 );
+
+/*==========================================================
+                CONTACT FORM - FORMSPREE
+==========================================================*/
+
+const contactForm = document.getElementById("contactForm");
+const contactSubmit = document.getElementById("contactSubmit");
+const contactStatus = document.getElementById("contactStatus");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        // Prevent multiple submissions
+        if (contactSubmit.disabled) {
+            return;
+        }
+
+        const originalButtonText = contactSubmit.innerHTML;
+
+        // Show sending state
+        contactSubmit.disabled = true;
+
+        contactSubmit.innerHTML = `
+            <i class="fas fa-spinner fa-spin"></i>
+            Sending...
+        `;
+
+        contactStatus.textContent = "";
+        contactStatus.className = "mt-3";
+
+        try {
+
+            const formData = new FormData(contactForm);
+
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                // Success
+                contactStatus.textContent =
+                    "✓ Message sent successfully! I'll get back to you soon.";
+
+                contactStatus.className =
+                    "mt-3 text-success";
+
+                // Clear form
+                contactForm.reset();
+
+            } else {
+
+                // Formspree returned an error
+                const data = await response.json().catch(() => null);
+
+                throw new Error(
+                    data?.errors?.map(error => error.message).join(", ")
+                    || "Something went wrong. Please try again."
+                );
+
+            }
+
+        } catch (error) {
+
+            console.error("Contact form error:", error);
+
+            contactStatus.textContent =
+                "✕ Message could not be sent. Please try again.";
+
+            contactStatus.className =
+                "mt-3 text-danger";
+
+        } finally {
+
+            // Restore button
+            contactSubmit.disabled = false;
+
+            contactSubmit.innerHTML = originalButtonText;
+
+        }
+
+    });
+
+}
